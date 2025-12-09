@@ -22,10 +22,14 @@ const Hero = () => {
           <AuthorIntro />
 
           <div className="flex items-center justify-center flex-wrap gap-3 mb-8">
-            {accentBadges.map((badge) => (
+            {accentBadges.map((badge, index) => (
               <div
                 key={badge.label}
-                className={`px-4 py-2 rounded-full text-sm font-semibold border border-black/5 shadow-sm ${badge.className}`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold border border-black/5 shadow-sm animate-fade-in-up ${badge.className}`}
+                style={{ 
+                  animationDelay: `${0.4 + index * 0.1}s`,
+                  opacity: 0
+                }}
               >
                 {badge.label}
               </div>
@@ -33,17 +37,17 @@ const Hero = () => {
           </div>
 
           <header className="mb-12 md:mb-14">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-balance text-[#0f0f0f]">
-              Clinify — an integrated clinical workflow platform that surfaces what clinicians need
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-balance text-[#0f0f0f] animate-fade-in-up animate-delay-500">
+              Clinify: Everything clinicians need, in one place
             </h1>
             
-            <p className="mt-6 text-lg md:text-xl text-[#3c3c3c] max-w-3xl mx-auto leading-relaxed font-medium text-balance">
-              Clinify is an AI-powered system I’m designing and building that unifies member search, analytics, communication, SDoH insights, risk modeling, program enrollment, and patient engagement into a single streamlined workflow.
+            <p className="mt-6 text-lg md:text-xl text-[#3c3c3c] max-w-3xl mx-auto leading-relaxed font-medium text-balance animate-fade-in-up animate-delay-600">
+              Clinify is an AI-powered system I'm designing and building that unifies member search, analytics, communication, SDoH insights, risk modeling, program enrollment, and patient engagement into a single streamlined workflow.
               <br /><br />
-              This page is a preview of the kind of work and reasoning I’d bring to Anima.
+              This page is a preview of the kind of work and reasoning I'd bring to Anima.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-700">
               <button
                 onClick={() => setIsModalOpen(true)}
                 className="px-8 py-4 bg-[#0b70ff] text-white rounded-lg font-semibold shadow-[0_14px_38px_rgba(11,112,255,0.25)] hover:shadow-[0_18px_44px_rgba(11,112,255,0.3)] transform hover:-translate-y-0.5 transition-all duration-200"
@@ -61,7 +65,7 @@ const Hero = () => {
             </div>
           </header>
 
-          <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center animate-slide-in-up animate-delay-700">
             <div className="w-full max-w-5xl rounded-3xl overflow-hidden shadow-[0_26px_70px_rgba(0,0,0,0.14)] border border-[#e6e6e6] bg-white">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-[#ededed] bg-[#fafafa] text-xs text-[#6f6f6f]">
                 <span className="flex items-center gap-1">
